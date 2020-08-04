@@ -10,27 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_04_043958) do
+ActiveRecord::Schema.define(version: 2020_08_04_061204) do
 
   create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "name"
-    t.bigint "user_id", null: false
+    t.string "title"
     t.datetime "shared"
     t.datetime "archived"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
   create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "list_id", null: false
-    t.bigint "user_id", null: false
     t.text "content"
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["list_id"], name: "index_notes_on_list_id"
-    t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -40,7 +34,4 @@ ActiveRecord::Schema.define(version: 2020_08_04_043958) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "lists", "users"
-  add_foreign_key "notes", "lists"
-  add_foreign_key "notes", "users"
 end
