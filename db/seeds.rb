@@ -22,3 +22,18 @@ end
         # user_id: index + 7s
     })
 end
+
+
+10.times do |index|
+    Note.create({
+        content: Faker::Quote.yoda,
+        status: 0 # 0 todo
+    })
+end
+
+
+User.create({
+    email: 'alysiawu886@gmail.com',
+    password: '123456'
+})
+

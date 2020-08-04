@@ -3,7 +3,6 @@ module Api
         class ListsController < ApplicationController
             def index
                 lists = List.order('created_at DESC')
-                puts "here----"
                 render json: { status: 'SUCCESS', message: 'Loaded Lists', data: lists}, status: :ok
             end
 

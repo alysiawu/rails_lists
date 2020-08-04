@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   namespace 'api' do
     namespace 'v1' do
       resources :lists # this will add the correct routes!!! whattt
+      resources :notes # this will add the correct routes!!! whattt
+      resources :users # this will add the correct routes!!! whattt
     end 
   end 
 end

@@ -13,6 +13,42 @@ Things you may want to cover:
 
 * Database creation
 
+1. Run `rails db:seed`  to create sample data
+Use postman to try the following endpoints: 
+GET
+http://localhost:3000/api/v1/lists
+
+GET
+http://localhost:3000/api/v1/lists/<id>
+
+POST 
+http://localhost:3000/api/v1/lists/<id>
+payload: 
+{
+
+}
+
+PUT
+
+http://localhost:3000/api/v1/notes/1
+
+payload: 
+{
+status: 1,
+content: 'updated content'
+}
+DELETE
+
+
+http://localhost:3000/api/v1/notes
+
+
+
+
+
+http://localhost:3000/api/v1/users
+
+
 * Database initialization
 
 * How to run the test suite
